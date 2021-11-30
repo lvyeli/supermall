@@ -30,9 +30,6 @@
     <div class="shop-bottom">
       <div class="enter-shop">进店逛逛</div>
     </div>
-    <div class="nav">
-      11
-    </div>
   </div>
 </template>
 
@@ -136,7 +133,5 @@ export default {
   border-radius: 10px;
   line-height: 30px;
 }
-.nav {
-  width: 1000px;
-}
+
 </style>

@@ -17,24 +17,39 @@ const routes = [
   },
   {
     path: '/home',
-    component: Home
+    component: Home,
+    meta: {
+      showTabBar: true
+    }
   },
   {
     path: '/category',
-    component: Category
+    component: Category,
+    meta: {
+      showTabBar: true
+    }
   },
   {
     path: '/cart',
-    component: Cart
+    component: Cart,
+    meta: {
+      showTabBar: true
+    }
   },
   {
     path: '/profile',
-    component: Profile
+    component: Profile,
+    meta: {
+      showTabBar: true
+    }
   },
   {
     //动态路由传递参数
     path: '/detail/:iid',
-    component: Detail
+    component: Detail,
+    meta: {
+      showTabBar: false
+    }
   },
 ]
 const router = new VueRouter({
