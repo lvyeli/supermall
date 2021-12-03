@@ -6,6 +6,7 @@
     <!-- 商品列表 -->
     <cart-list></cart-list>
     <!-- 底部汇总 -->
+    
     <cart-bottom-bar></cart-bottom-bar>
   </div>
 </template>

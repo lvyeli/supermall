@@ -13,6 +13,7 @@
     </scroll>
     <back-top @click.native="backClick" v-show="isShowBackTop"></back-top>
     <detail-bottom-bar @addCart="addToCart"></detail-bottom-bar>
+    <!-- <toast :message="message" :isShow="isShow"></toast> -->
   </div>
 </template>
 
@@ -27,6 +28,7 @@ import DetailCommentInfo from "./childComps/DetailCommentInfo.vue"
 import DetailBottomBar from "./childComps/DetailBottomBar.vue"
 
 import Scroll from "@/components/common/scroll/Scroll.vue";
+// import Toast from "@/components/common/toast/Toast.vue";
 import GoodsList from "@/components/content/goods/GoodsList.vue";
 
 import { getDetail, Goods, Shop, GoodsParam, getRecommend } from "@/network/detail";
@@ -43,6 +45,7 @@ export default {
     DetailCommentInfo,
     DetailBottomBar,
     Scroll,
+    // Toast,
     GoodsList,
   },
   mixins: [backTopMixin],
@@ -58,6 +61,8 @@ export default {
       recommends: [],
       themeTopYs: [],
       currentIndex: 0,
+      // message: '',
+      // isShow: false
     };
   },
   created() {
@@ -152,7 +157,14 @@ export default {
       product.iid = this.iid
       //2.将商品添加进购物车 vuex管理
       // this.$store.commit('addCart', product)
-      this.$store.dispatch('addCart',product)
+      this.$store.dispatch('addCart',product).then(res => {
+        this.$toast.show(res)
+        // this.isShow = true
+        // this.message = res
+        // setTimeout(() => {
+        //   this.isShow = false
+        // }, 1500)
+      })
     }
   }
 };
